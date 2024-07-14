@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Header, Request, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from .db import SessionLocal
-from .models import Penduduk
+from app.db import SessionLocal
+from app.models import Penduduk
 from . import models, schemas
 from fastapi.responses import JSONResponse
 
