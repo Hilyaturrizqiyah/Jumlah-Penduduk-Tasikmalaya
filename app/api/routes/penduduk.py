@@ -3,15 +3,18 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func
 from app.db import SessionLocal
 from app.models import Penduduk
-from . import models, schemas
 from fastapi.responses import JSONResponse
 
 router = APIRouter()
 
+def get_models():
+    from . import models, schemas
+    return models, schemas
+
 def get_db(request: Request):
     return request.state.db
 
-@router.get("/penduduk/all")
+@router.get("/all")
 async def get_all(db: Session = Depends(get_db)):
     # if token != "xYEq9m2f8C8X4F9fZvp2QbndsPfESunN":
     #     raise HTTPException(status_code=403, detail="Invalid token")
@@ -65,7 +68,7 @@ async def get_all(db: Session = Depends(get_db)):
         "total_penduduk": total_penduduk
     }
 
-@router.get("/penduduk/kecamatan")
+@router.get("/kecamatan")
 async def get_kecamatan(token: str = Header(...), nama_kecamatan: str = Query(None), db: Session = Depends(get_db)):
     if token != "xYEq9m2f8C8X4F9fZvp2QbndsPfESunN":
         raise HTTPException(status_code=403, detail="Invalid token")
@@ -103,7 +106,7 @@ async def get_kecamatan(token: str = Header(...), nama_kecamatan: str = Query(No
         "data": data
     }
 
-@router.get("/penduduk/kelurahan")
+@router.get("/kelurahan")
 async def get_kelurahan(
     token: str = Header(...),
     nama_kelurahan: str = Query(None),

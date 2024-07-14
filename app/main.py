@@ -1,13 +1,14 @@
 from fastapi import FastAPI, Request, Response
-from .db import SessionLocal, engine
-from . import models, routes
+from app.db import SessionLocal, engine  # Pastikan import dari path yang benar
+from app import models  # Mengimpor models dari app
+from app.api.routes import penduduk  # Mengimpor routes dari subfolder api.routes
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
 @app.middleware("http")
-async def db_session_middleware(request, call_next):
+async def db_session_middleware(request: Request, call_next):
     response = Response("Internal server error", status_code=500)
     try:
         request.state.db = SessionLocal()
@@ -16,4 +17,9 @@ async def db_session_middleware(request, call_next):
         request.state.db.close()
     return response
 
-app.include_router(routes.router)
+# Include routers
+app.include_router(penduduk.router, prefix="/penduduk")
+
+@app.get("/")
+async def read_root():
+    return {"message": "Hello World"}
