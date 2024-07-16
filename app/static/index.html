@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Penduduk</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .chart-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jumlah Penduduk</h1>
+    <nav>
+        <ul>
+            <li><a href="#pie-chart-section">Pie Chart Jumlah Penduduk</a></li>
+            <li><a href="#kecamatan-bar-chart-section">Bar Chart Distribusi Penduduk Per Kecamatan</a></li>
+            <li><a href="#kelurahan-bar-chart-section">Bar Chart Distribusi Penduduk Per Kelurahan</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Bagian untuk Pie Chart -->
+    <section id="pie-chart-section">
+        <h2>Pie Chart Jumlah Penduduk</h2>
+        <div class="chart-wrapper">
+            <div id="pie-chart"></div>
+            <div id="pie-chart-legend"></div>
+        </div>
+    </section>
+
+    <!-- Bagian untuk Bar Chart Kecamatan -->
+    <section id="kecamatan-bar-chart-section">
+        <h2>Bar Chart Distribusi Penduduk Per Kecamatan</h2>
+        <!-- <form id="filter-kecamatan-form"> -->
+            <label for="nama_kecamatan">Nama Kecamatan:</label>
+            <select id="nama_kecamatan"></select>
+        <!-- </form> -->
+        <div class="chart-wrapper">
+            <div id="kecamatan-bar-chart"></div>
+        </div>
+    </section>
+
+    <!-- Bagian untuk Bar Chart Kelurahan -->
+    <section id="kelurahan-bar-chart-section">
+        <h2>Bar Chart Distribusi Penduduk Per Kelurahan</h2>
+        <!-- <form id="filter-kelurahan-form"> -->
+            <!-- <label for="filter_nama_kecamatan">Kecamatan:</label>
+            <select id="filter_nama_kecamatan" name="nama_kecamatan" required>
+                <option value="" disabled selected>Pilih Kecamatan</option>
+            </select>
+        
+            <label for="filter_nama_kelurahan">Kelurahan:</label>
+            <select id="filter_nama_kelurahan" name="nama_kelurahan" required>
+                <option value="" disabled selected>Pilih Kelurahan</option>
+            </select> -->
+
+            <label for="kecamatan">Pilih Kecamatan:</label>
+            <select id="kecamatan" name="nama_kecamatan"></select>
+
+            <label for="kelurahan">Pilih Kelurahan:</label>
+            <select id="kelurahan" name="nama_kelurahan"></select>
+        <!-- </form> -->
+        <div class="chart-wrapper">
+            <div id="chart"></div>
+        </div>
+    </section>
+    
+    
+    <script src="/static/js/d3.min.js"></script>
+    <script src="/static/js/penduduk_all.js"></script>
+    <script src="/static/js/penduduk_kecamatan.js"></script>
+    <script src="/static/js/penduduk_kelurahan.js"></script>
+</body>
+</html>
