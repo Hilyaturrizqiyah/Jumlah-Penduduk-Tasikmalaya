@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request, Response
+from fastapi.staticfiles import StaticFiles
 from app.db import SessionLocal, engine  # Pastikan import dari path yang benar
 from app import models  # Mengimpor models dari app
 from app.api.routes import penduduk  # Mengimpor routes dari subfolder api.routes
@@ -18,8 +19,11 @@ async def db_session_middleware(request: Request, call_next):
     return response
 
 # Include routers
-app.include_router(penduduk.router, prefix="/penduduk")
+app.include_router(penduduk.router, prefix="/penduduk", tags=["Penduduk"])
 
-@app.get("/")
-async def read_root():
-    return {"message": "Hello World"}
+# Menyajikan file statis
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+# @app.get("/")
+# async def read_root():
+#     return {"message": "Hello World"}
