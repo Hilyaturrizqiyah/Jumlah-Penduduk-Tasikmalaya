@@ -20,7 +20,7 @@ function renderPieChart(data) {
 
     const color = d3.scaleOrdinal()
         .domain(data.map(d => d.label))
-        .range(['stellblue', 'pink']);
+        .range(['steelblue', 'pink']);
 
     const pie = d3.pie()
         .value(d => d.value);
