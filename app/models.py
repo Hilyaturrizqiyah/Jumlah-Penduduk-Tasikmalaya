@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, BigInteger
 from .db import Base
 
 class Penduduk(Base):
@@ -10,7 +10,7 @@ class Penduduk(Base):
     nama_kabupaten_kota = Column(String)
     kode_kecamatan = Column(Integer)
     nama_kecamatan = Column(String)
-    kode_kelurahan = Column(Integer)
+    kode_kelurahan = Column(BigInteger)
     nama_kelurahan = Column(String)
     jenis_kelamin = Column(String)
     jumlah_penduduk = Column(Integer)
