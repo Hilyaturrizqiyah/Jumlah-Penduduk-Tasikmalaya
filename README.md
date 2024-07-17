@@ -38,7 +38,7 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek ini:
 
 1. **Clone Repositori**
 ```bash
-https://github.com/Hilyaturrizqiyah/Jumlah-Penduduk-Tasikmalaya.git
+git clone https://github.com/Hilyaturrizqiyah/Jumlah-Penduduk-Tasikmalaya.git
 ```
 2. **Buat Lingkungan Virtual dan Aktifkan (opsional)**
 
@@ -175,7 +175,7 @@ Berikut adalah struktur direktori proyek ini:
     ```
     **Cara Akses**
     Endpoint ini memerlukan token. Token harus disertakan dalam header HTTP dengan format `Authorization: Bearer <token>`, misalnya:
-    ```http
+    ```bash
       GET /kecamatan?nama_kecamatan=Kecamatan1
       Authorization: Bearer xYEq9m2f8C8X4F9fZvp2QbndsPfESunN
     ```
@@ -201,7 +201,7 @@ Berikut adalah struktur direktori proyek ini:
     ```
     **Cara Akses**
     Endpoint ini memerlukan token. Token harus disertakan dalam header HTTP dengan format `Authorization: Bearer <token>`, misalnya:
-    ```http
+    ```bash
       GET /kelurahan?nama_kelurahan=Kelurahan1
       Authorization: Bearer xYEq9m2f8C8X4F9fZvp2QbndsPfESunN
     ```
@@ -220,7 +220,7 @@ Berikut adalah struktur direktori proyek ini:
     ```
     **Cara Akses**
     Endpoint ini memerlukan token. Token harus disertakan dalam header HTTP dengan format `Authorization: Bearer <token>`, misalnya:
-    ```http
+    ```bash
       GET /kecamatan_list
       Authorization: Bearer xYEq9m2f8C8X4F9fZvp2QbndsPfESunN
     ```
@@ -239,7 +239,7 @@ Berikut adalah struktur direktori proyek ini:
     ```
     **Cara Akses**
     Endpoint ini memerlukan token. Token harus disertakan dalam header HTTP dengan format `Authorization: Bearer <token>`, misalnya:
-    ```http
+    ```bash
       GET /kelurahan_list?kecamatan=Kecamatan1
       Authorization: Bearer xYEq9m2f8C8X4F9fZvp2QbndsPfESunN
     ```
