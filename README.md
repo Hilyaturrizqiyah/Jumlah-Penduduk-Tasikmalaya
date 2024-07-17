@@ -40,6 +40,8 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek ini:
 1. **Clone Repositori**
 ```bash
 https://github.com/Hilyaturrizqiyah/Jumlah-Penduduk-Tasikmalaya.git
+```
+
 
 ## Struktur Proyek
 .
