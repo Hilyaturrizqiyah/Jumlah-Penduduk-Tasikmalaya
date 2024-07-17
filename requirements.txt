@@ -2,4 +2,5 @@ fastapi
 uvicorn
 sqlalchemy
 pymysql
+pandas
 mysql-connector-python
