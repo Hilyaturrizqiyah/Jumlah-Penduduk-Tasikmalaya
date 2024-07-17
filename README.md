@@ -250,12 +250,15 @@ Berikut adalah struktur direktori proyek ini:
 
   a. **Bagian Pie Chart**
     Menampilkan Pie Chart yang menunjukkan distribusi jumlah penduduk berdasarkan jenis kelamin. Data diambil dari endpoint `/all`.
+    ![Bagian Pie Chart](https://github.com/user-attachments/assets/308fc6a8-8698-4928-9f60-95eb492fe2ef)
 
   b. **Bagian Bar Chart Kecamatan**
   Menampilkan Bar Chart yang menunjukkan distribusi penduduk berdasarkan jenis kelamin untuk kecamatan yang dipilih. Data diambil dari endpoint `/kecamatan`.
+  ![Bagian Bar Chart Kecamatan](https://github.com/user-attachments/assets/014f4661-dacf-45c5-ad4a-34cfa63f8a1e)
 
   c. **Bagian Bar Chart Kelurahan**
   Menampilkan Bar Chart yang menunjukkan distribusi penduduk berdasarkan jenis kelamin untuk kelurahan yang dipilih setelah memilih kecamatan. Data diambil dari endpoint `/kelurahan`.
+  ![Bagian Bar Chart Kelurahan](https://github.com/user-attachments/assets/7a7cec0e-e7d3-4ac4-b5ec-e9010747e902)
 
 ### Catatan
 - `app/db.py`: Tempatkan konfigurasi database Anda di sini, ganti `mysql+pymysql://username:password@localhost/dbname` dengan konfigurasi MySQL Anda yang sesuai.
